@@ -1,0 +1,25 @@
+{% extends 'base.html'%} {% block content %}
+<div class="my_form_div">
+  <h2>My favorites</h2>
+  <input placeholder="Search" id="favorites_search" />
+</div>
+
+{% for recipe in recipe_favorite_list %}
+<div class="recipe_solo_div">
+  <h3 class="recipe_name">{{recipe['recipe_name']}}</h3>
+  <a href="/show_recipe/{{recipe['recipe_id']}}">
+    <img src="{{recipe['recipe_image']}}" alt="meal" />
+  </a>
+  <div class="recipe_solo_div_bottom">
+    <p>{{recipe['recipe_description']}}</p>
+    {% if user_name %}
+    <a href="/recipe_delete_action/{{recipe['recipe_id']}}">
+      <button id="{{recipe['recipe_id']}}">Remove</button>
+    </a>
+    {% endif %}
+    <a href="/show_recipe/{{recipe['recipe_id']}}">
+      <button id="{{recipe['recipe_id']}}">Recipe</button>
+    </a>
+  </div>
+</div>
+{%endfor%} {% endblock %}

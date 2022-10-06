@@ -1,0 +1,22 @@
+{% extends 'base.html'%} {% block content %}
+<div class="my_form_div">
+  <div class="login">
+    <h2>Login</h2>
+    <form action="/login_action" method="POST">
+      <!-- <input type="hidden" name="id" /> -->
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    {% if user_error %}
+    <p class="action_error">{{user_error}}</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

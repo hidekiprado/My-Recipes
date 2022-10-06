@@ -1,0 +1,20 @@
+{% extends 'base.html'%} {% block content %} {% for recipe in recipe_list %} {%
+if recipe['recipe_image'] %}
+<div class="recipe_solo_div">
+  <h3>{{recipe['recipe_name']}}</h3>
+  <a href="/show_recipe/{{recipe['recipe_id']}}">
+    <img src="{{recipe['recipe_image']}}" alt="meal" />
+  </a>
+  <div class="recipe_solo_div_bottom">
+    <p>{{recipe['recipe_description']}}</p>
+    {% if user_name %}
+    <a href="/add_recipe_action/{{recipe['recipe_id']}}">
+      <button id="{{recipe['recipe_id']}}">Save</button>
+    </a>
+    {% endif %}
+    <a href="/show_recipe/{{recipe['recipe_id']}}">
+      <button id="{{recipe['recipe_id']}}">Recipe</button>
+    </a>
+  </div>
+</div>
+{% endif %} {%endfor%} {% endblock %}

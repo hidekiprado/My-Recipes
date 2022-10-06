@@ -1,0 +1,41 @@
+{% extends 'base.html'%} {% block content %}
+<div class="recipe_information_div">
+  <div class="recipe_information_left">
+    <img src="{{recipe['recipe_images']['recipe_image']}}" alt="meal" />
+    {% if user_name %}
+    <a href="/add_recipe_action/{{recipe['recipe_id']}}">
+      <button id="{{recipe['recipe_id']}}">Save</button>
+    </a>
+    <a href="/recipe_edit_information/{{recipe['recipe_id']}}">
+      <button id="{{recipe['recipe_id']}}">Change</button>
+    </a>
+    <button onclick="history.back()">Go Back</button>
+
+    {% endif %}
+    <h3>Yields</h3>
+    <p>{{recipe['number_of_servings']}} serving</p>
+    <h3>Prep Time:</h3>
+    <p>{{recipe['preparation_time_min']}} min</p>
+  </div>
+  <div class="recipe_information_right">
+    <h3>{{recipe['recipe_name']}}</h3>
+    <p>{{recipe['recipe_description']}}</p>
+    <div class="div_ingredients">
+      <h3>Ingredients</h3>
+      {% for ingredient in recipe['ingredients']['ingredient'] %}
+      <p>{{ingredient['ingredient_description']}}</p>
+      {%endfor%}
+    </div>
+    <div class="div_directions">
+      <h3>Directions</h3>
+      {% for direction in recipe['directions']['direction'] %}
+      <p>
+        {{direction['direction_number']}}
+        <span>{{direction['direction_description']}}</span>
+      </p>
+
+      {%endfor%}
+    </div>
+  </div>
+</div>
+{% endblock %}

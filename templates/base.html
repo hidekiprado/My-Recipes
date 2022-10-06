@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Teko:700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Recipes</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons.flaticon.com/png/512/562/premium/562678.png?token=exp=1659140652~hmac=0e50cc6dbd555fc680898bf0f9e313df"
+    />
+    <link rel="stylesheet" href="/static/styles/styles.css" />
+  </head>
+
+  <body>
+    <div class="div_body_base">
+      <div class="div_menu">
+        <header>
+          <div class="my_recipe_h1">
+            <h1>My Recipes</h1>
+          </div>
+          <div class="login_logout">
+            {% if user_name %}
+            <p>Logged in as <span>{{user_name}}</span></p>
+            <div class="main_links">
+              <a href="/logout_action">Logout</a>
+            </div>
+            {% else %}
+            <div class="main_links">
+              <a href="/login">Go to Login</a>
+              <a href="/sign_up">Sign-up</a>
+            </div>
+            {% endif %}
+          </div>
+          <nav class="nav_main">
+            <div class="main_links">
+              <a href="/">Home </a>
+              {% if user_name %}
+              <a href="/favorites">Favorites </a>
+              {% endif %}
+            </div>
+          </nav>
+          <div class="search_form">
+            <form action="/" method="POST">
+              <div>
+                <input
+                  placeholder="Search"
+                  id="recipe_search"
+                  name="recipe_search"
+                />
+              </div>
+
+              <button id="button_spin" type="submit">>></button>
+            </form>
+          </div>
+        </header>
+        <div class="recipes_div">{% block content %} {% endblock %}</div>
+      </div>
+    </div>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>

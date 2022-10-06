@@ -1,0 +1,208 @@
+body {
+  margin: 0 auto;
+  padding-right: 5%;
+  padding-left: 5%;
+  background-color: #f5fffc;
+  color: #435b5f;
+  font-family: "Cormorant SC", serif;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  top: 0px;
+  padding: 10px;
+  background-color: #f5fffc;
+  opacity: 0.96;
+  z-index: 2;
+}
+.my_recipe_h1 h1 {
+  font-size: 40px;
+  animation: glow 1s ease-in-out infinite alternate;
+  text-align: center;
+  color: #435b5f;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #2d9da9;
+  }
+  to {
+    text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+  }
+}
+.nav_main ul {
+  display: flex;
+  gap: 5%;
+}
+
+.main_links a {
+  font-size: large;
+  padding: 15px;
+  border-radius: 20px;
+  margin: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+.main_links a:hover {
+  transition: 1s;
+  box-shadow: #b7f7e6c1 5px 5px, #b7f7e666 10px 10px, #b7f7e636 15px 15px;
+}
+.my_recipe_h1 {
+  text-align: center;
+}
+.login_logout {
+  justify-content: space-evenly;
+}
+.search_form form {
+  justify-content: end;
+}
+.login_logout,
+.search_form form {
+  display: flex;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  flex-wrap: wrap;
+  padding: 1%;
+  align-items: center;
+}
+.login_logout:hover,
+.search_form form:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+input {
+  outline-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  border-radius: 4px;
+  border-bottom-color: rgb(10, 135, 137);
+  padding: 4px;
+}
+input:focus {
+  transition: 0.4s;
+  outline-color: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: rgba(10, 135, 137, 0.373);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.nav_main ul {
+  display: flex;
+}
+.recipes_div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: fit-content;
+  padding: 20px;
+}
+.my_form_div {
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.my_form_div:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.my_form_div input {
+  margin: 10px;
+}
+.my_form_div .login input {
+  width: 100%;
+}
+.my_form_div .login {
+  width: 30%;
+}
+.recipe_solo_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 15px;
+  border-radius: 20px;
+  width: 29%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.recipe_solo_div:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.recipe_solo_div_bottom {
+  text-align: center;
+}
+.recipe_information_div {
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  padding: 5%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  gap: 5%;
+}
+.recipe_information_div:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.recipe_information_left {
+  display: flex;
+  flex-direction: column;
+}
+.recipe_information_left p {
+  margin: 0;
+}
+.recipe_information_right {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 200px;
+  cursor: pointer;
+}
+img:hover {
+  opacity: 0.9;
+}
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: rgb(39, 45, 44);
+}
+
+button {
+  background-color: #b7f7e6;
+  width: fit-content;
+  color: #4e4e4e;
+  border-radius: 8px;
+  border-style: none;
+  cursor: pointer;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: medium;
+  font-weight: 500;
+  padding: 10px;
+  margin: 5px;
+}
+
+button:hover,
+button:focus {
+  background-color: #e6f9f4;
+  transition: 0.6s;
+}
+#button_spin:hover {
+  transform: rotate(360deg);
+  transition: all 0.3s ease-in-out 0s;
+}
+.hidden {
+  display: none;
+}
+.action_error {
+  color: red;
+}
